@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e9e5ea ">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="326dp"
+        android:layout_height="342dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat_icon_foreground" />
+
+    <TextView
+        android:id="@+id/classifying_breed_text"
+        android:layout_width="339dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="488dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/oxygen"
+        android:gravity="center"
+        android:text="Classifying Your Cat Breed..."
+        android:textColor="#2E2E2E"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/loadingPanel"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:gravity="center">-->
+
+    <!--        <ProgressBar-->
+    <!--            android:layout_width="140dp"-->
+    <!--            android:layout_height="105dp"-->
+    <!--            android:indeterminate="true" />-->
+    <!--    </RelativeLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
