@@ -39,7 +39,7 @@ class IdentifiedCatFragment : Fragment() {
 
         val navController: NavController = view.findNavController()
         againButton.setOnClickListener {
-            navController.navigate(R.id.action_identifiedCatFragment2_to_homeFragment)
+            navController.navigate(R.id.homeFragment)
         }
 
     }
