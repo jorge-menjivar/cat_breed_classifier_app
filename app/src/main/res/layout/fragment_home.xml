@@ -13,7 +13,7 @@
         android:layout_width="116dp"
         android:layout_height="79dp"
         android:layout_marginStart="144dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#270034"
         android:fontFamily="@font/oxygen"
         android:text="Pick Image"
@@ -22,9 +22,20 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="260dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/catifier_icon_foreground" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="233dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +44,7 @@
     <TextView
         android:id="@+id/app_title"
         android:layout_width="327dp"
-        android:layout_height="109dp"
+        android:layout_height="92dp"
         android:layout_marginStart="42dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="42dp"
@@ -50,17 +61,17 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="359dp"
-        android:layout_height="151dp"
+        android:layout_height="86dp"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/oxygen"
         android:gravity="center"
-        android:text="Take a picture of any cat. We'll identify which cat breeed it is!"
+        android:text="Choose a picture of any cat. We'll identify which cat breeed it is!"
         android:textColor="#2E2E2E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_title" />
 

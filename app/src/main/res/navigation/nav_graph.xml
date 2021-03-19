@@ -8,24 +8,33 @@
         android:id="@+id/homeFragment"
         android:name="com.example.catbreedclassifier.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_identifiedCatFragment2"
-            app:destination="@id/identifiedCatFragment2" />
+            android:id="@+id/action_homeFragment_to_previewImage"
+            app:destination="@id/previewImage" />
     </fragment>
     <fragment
         android:id="@+id/identifiedCatFragment2"
         android:name="com.example.catbreedclassifier.IdentifiedCatFragment"
         android:label="fragment_cat_identified"
-        tools:layout="@layout/fragment_cat_identified" >
-        <action
-            android:id="@+id/action_identifiedCatFragment2_to_homeFragment"
-            app:destination="@id/homeFragment" />
+        tools:layout="@layout/fragment_cat_identified">
         <argument
             android:name="breed"
             app:argType="string" />
         <argument
             android:name="bitmap"
             app:argType="android.graphics.Bitmap" />
+        <action
+            android:id="@+id/action_identifiedCatFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewImage"
+        android:name="com.example.catbreedclassifier.PreviewImageFragment"
+        android:label="fragment_image_preview"
+        tools:layout="@layout/fragment_image_preview">
+        <action
+            android:id="@+id/action_previewImage_to_identifiedCatFragment2"
+            app:destination="@id/identifiedCatFragment2" />
     </fragment>
 </navigation>

@@ -39,12 +39,12 @@
         android:layout_marginEnd="36dp"
         android:backgroundTint="#270034"
         android:fontFamily="@font/oxygen"
-        android:text="Keep"
+        android:text="Keep This One"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_preview" />
 
     <Button
-        android:id="@+id/retake_button"
+        android:id="@+id/pick_different_button"
         android:layout_width="116dp"
         android:layout_height="79dp"
         android:layout_marginStart="36dp"
@@ -52,7 +52,7 @@
         android:layout_marginEnd="107dp"
         android:backgroundTint="#270034"
         android:fontFamily="@font/oxygen"
-        android:text="Retake"
+        android:text="Pick Different Image"
         app:layout_constraintEnd_toStartOf="@+id/keep_button"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
