@@ -1,4 +1,4 @@
 package com.example.catbreedclassifier
 
-class identified_cat {
+class PreviewImage {
 }

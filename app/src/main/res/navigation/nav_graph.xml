@@ -3,11 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.catbreedclassifier.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.catbreedclassifier.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_identifiedCatFragment2"
+            app:destination="@id/identifiedCatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/identifiedCatFragment"
+        android:name="com.example.catbreedclassifier.IdentifiedCatFragment"
+        android:label="fragment_cat_identified"
+        tools:layout="@layout/fragment_cat_identified" >
+        <action
+            android:id="@+id/action_identifiedCatFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="breed"
+            app:argType="string" />
+        <argument
+            android:name="bitmap"
+            app:argType="android.graphics.Bitmap" />
+    </fragment>
 </navigation>
