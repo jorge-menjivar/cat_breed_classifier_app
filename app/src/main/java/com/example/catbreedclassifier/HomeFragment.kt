@@ -7,21 +7,25 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.catbreedclassifier.ml.MobileCatBreeds
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.common.FileUtil
 import org.tensorflow.lite.support.common.TensorProcessor
 import org.tensorflow.lite.support.common.ops.NormalizeOp
+import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.image.ops.ResizeOp
+import org.tensorflow.lite.support.image.ops.ResizeOp.ResizeMethod
+import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp
+import org.tensorflow.lite.support.image.ops.Rot90Op
 import org.tensorflow.lite.support.label.TensorLabel
 
 class HomeFragment : Fragment() {
@@ -63,13 +67,26 @@ class HomeFragment : Fragment() {
 
             val stream = data?.data?.let { activity?.contentResolver!!.openInputStream(it) }
 
+            var bitmapImage = BitmapFactory.decodeStream(stream)
 
-            var photoImage = BitmapFactory.decodeStream(stream)
+            // Loads bitmap into a TensorImage.
 
-            photoImage = Bitmap.createScaledBitmap(photoImage, 224, 224, false)
+            val inputImageBuffer = TensorImage(DataType.FLOAT32)
+            inputImageBuffer.load(bitmapImage)
 
-            var tensorImage: TensorImage = TensorImage.fromBitmap(photoImage)
-            tensorImage = TensorImage.createFrom(tensorImage, DataType.FLOAT32)
+            val cropSize: Int = bitmapImage.width.coerceAtMost(bitmapImage.height)
+            val imageProcessor: ImageProcessor = ImageProcessor.Builder()
+                .add(
+                    ResizeWithCropOrPadOp(
+                        cropSize,
+                        cropSize
+                    )
+                )
+                .add(ResizeOp(224, 224, ResizeMethod.NEAREST_NEIGHBOR))
+                .add(NormalizeOp(0.0f, 255.0f))
+                .build()
+
+            val tensorImage = imageProcessor.process(inputImageBuffer)
 
             // Runs model inference and gets result.
             val outputs = model.process(tensorImage.tensorBuffer)
@@ -93,8 +110,8 @@ class HomeFragment : Fragment() {
             val labeledProbability: Map<String, Float> =
                     labels?.let {
                         TensorLabel(
-                                it,
-                                probabilityProcessor.process(outputFeature0)
+                            it,
+                            probabilityProcessor.process(outputFeature0)
                         ).mapWithFloatValue
                     } as Map<String, Float>
 
@@ -104,7 +121,7 @@ class HomeFragment : Fragment() {
 
             val action = result?.let {
                 HomeFragmentDirections
-                        .actionHomeFragmentToIdentifiedCatFragment2(it.key, photoImage)
+                        .actionHomeFragmentToIdentifiedCatFragment2(it.key, bitmapImage)
             }
 
             if (action != null) {
