@@ -8,19 +8,19 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="326dp"
-        android:layout_height="342dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="350dp"
+        android:layout_height="368dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cat_icon_foreground" />
+        app:srcCompat="@drawable/catifier_icon_foreground" />
 
     <TextView
         android:id="@+id/classifying_breed_text"
-        android:layout_width="339dp"
-        android:layout_height="158dp"
+        android:layout_width="332dp"
+        android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="488dp"
         android:layout_marginEnd="32dp"
@@ -30,6 +30,7 @@
         android:textColor="#2E2E2E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

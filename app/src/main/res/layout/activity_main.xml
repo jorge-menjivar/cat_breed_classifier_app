@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9E5EA"
+    android:backgroundTint="#E9E5EA"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/camera_button"
-        android:layout_width="116dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="126dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="#270034"
         android:fontFamily="@font/oxygen"
         android:text="Camera"
@@ -21,20 +22,20 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="233dp"
+        android:layout_height="168dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cat_icon_foreground" />
+        app:srcCompat="@drawable/catifier_icon_foreground" />
 
     <TextView
         android:id="@+id/app_title"
-        android:layout_width="327dp"
-        android:layout_height="109dp"
+        android:layout_width="324dp"
+        android:layout_height="75dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="42dp"
         android:fontFamily="@font/oxygen"
         android:gravity="center"
@@ -42,16 +43,16 @@
         android:textColor="#2E2E2E"
         android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="359dp"
-        android:layout_height="151dp"
+        android:layout_width="363dp"
+        android:layout_height="95dp"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/oxygen"
         android:gravity="center"
@@ -59,7 +60,7 @@
         android:textColor="#2E2E2E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_title" />
 
